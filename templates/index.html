@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block body%}
+
+<div class="row component">
+    <div class="col s12 m5 offset-m1 component text">
+        <h3>👋️Hi, It's DoodleAI here!</h3>
+        <p class="grey-text text-lighten-3">
+            I am an AI based doodle classifier. My inspiration comes from <a
+                href="https://quickdraw.withgoogle.com/#">Quick Draw</a>, another AI based doodle classifier by
+            Google.
+        </p>
+        <p class="grey-text text-lighten-3">
+            So, what you have to do is draw something fun from the <a href="#modal1" class="modal-trigger">available
+                categories</a> on the canvas
+            and I will try to guess what you have drawn. You have over 50 categories to show your creativity!
+        </p>
+        <p>
+            Since I classify doodles, you don't have to add too much details to the drawing. Here are some <a
+                href="https://quickdraw.withgoogle.com/data">examples</a> for your reference if you are
+            unfamiliar with doodles.
+        </p>
+        <p class="grey-text text-lighten-3">
+            You can read about how I was built at <a href="https://github.com/Prateek93a/Doodle">Github</a> and while
+            you are there, do hit the ⭐️
+            button :).
+        </p>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Categories</h4>
+                <p>
+                    {% for c in classes %}
+                    <span>
+                        {{c}},
+                    </span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Got it</a>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <p> It looks like hardware acceleration is not enabled on your browser!
+                    It is a strict requirement that needs to be fulfilled to get the AI model to work. <br>
+                    Refer this
+                    <a href='https://superuser.com/questions/836832/how-can-i-enable-webgl-in-my-browser/836833#836833'>
+                        post</a>
+                    to enable webgl usage and hardware acceleration
+                    <br>
+                    After that try loading the model again. If it still doesn't work, raise issue <a
+                        href="https://github.com/Prateek93a/Doodle">here</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col m5 s12 offset-m1 component">
+        <div class="row">
+            <div class="col"><a id="load-btn" class="btn blue darken-3">Load Model</a></div>
+            <div class="col"><a id="clear-btn" class="btn red darken-3">Clear Canvas</a></div>
+        </div>
+        <div id="canvas">
+
+        </div>
+        <p id="guess-text">
+
+        </p>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+<script src="http://127.0.0.1:8887/static/js/index.js"></script>
+
+{% endblock %}
