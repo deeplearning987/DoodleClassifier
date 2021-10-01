@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body%}
+
+<div class="row component">
+    <div class="col s12 m5 offset-m1 component text">
+        <h3>👋️Hi, It's DoodleAI here!</h3>
+       
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Categories</h4>
+                <p>
+                    {% for c in classes %}
+                    <span>
+                        {{c}},
+                    </span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Got it</a>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </div>
+    <div class="col m5 s12 offset-m1 component">
+        <div class="row">
+            <div class="col"><a id="load-btn" class="btn blue darken-3">Load Model</a></div>
+            <div class="col"><a id="clear-btn" class="btn red darken-3">Clear Canvas</a></div>
+        </div>
+        <div id="canvas">
+
+        </div>
+        <p id="guess-text">
+
+        </p>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+<script src="/static/js/index.js"></script>
+
+{% endblock %}
