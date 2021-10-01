@@ -8,4 +8,5 @@ categories = sorted(['airplane', 'mailbox', 'fish', 'face', 'bowtie', 'butterfly
 
 @app.route("/")
 def index():
-    return render_template("index.html", classes=categories)
+    #return render_template("index.html", classes=categories)
+    return render_template("index-1.html", classes=categories)
