@@ -102,9 +102,9 @@ function randomNoRepeats(array) {
     var index = Math.floor(Math.random() * copy.length);
     var item = copy[index];
     copy.splice(index, 0);
-	console.log("item name :   " +item)
-	name.innerText='draw a ' + item;
-	document.getElementById('name-text').innerHTML = "draw a "+item
+    console.log("item name :   " +item)
+    name.innerText='draw a ' + item;
+    document.getElementById('name-text').innerHTML = "draw a "+item
     return item;
   
 }
